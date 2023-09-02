@@ -14,23 +14,19 @@ function getNoteValue() {
 };
 
 
-function updateCountdown() {
-  const targetDate = new Date("2023-12-31T23:59:59").getTime();
-  const now = new Date().getTime();
-  const timeLeft = targetDate - now;
+function timerNewYear() {
+  const initialDate = new Date("2023-12-31T23:59:59").getTime();
+  const actualDate = new Date().getTime();
+  const timerLeft = initialDate - actualDate;
 
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  const days = Math.floor(timerLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timerLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timerLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timerLeft % (1000 * 60)) / 1000);
 
-  const countdownElement = document.getElementById('countdown');
-  countdownElement.innerHTML = `
-    Faltam ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos!
+  const timerNewYear = document.getElementById('timer-newYear');
+  timerNewYear.innerHTML = `
+    <p>Faltam <strong> ${days}</strong> dias, <strong>${hours}</strong> horas, <strong>${minutes}</strong> minutos e <strong>${seconds}</strong> segundos!</p>
   `;
-}
-
-setInterval(updateCountdown, 1000);
-
-updateCountdown();
+} setInterval(timerNewYear, 1000);
 
