@@ -14,19 +14,17 @@ function getNoteValue() {
 };
 
 
-function timerNewYear() {
-  const initialDate = new Date("2023-12-31T23:59:59").getTime();
-  const actualDate = new Date().getTime();
-  const timerLeft = initialDate - actualDate;
+const act1 = document.getElementById('atividade1');
 
-  const days = Math.floor(timerLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timerLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timerLeft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timerLeft % (1000 * 60)) / 1000);
 
-  const timerNewYear = document.getElementById('timer-newYear');
-  timerNewYear.innerHTML = `
-    <p>Faltam <strong> ${days}</strong> dias, <strong>${hours}</strong> horas, <strong>${minutes}</strong> minutos e <strong>${seconds}</strong> segundos!</p>
-  `;
-} setInterval(timerNewYear, 1000);
-
+function startTimer() {
+  const timerDiv = document.getElementById('timer');
+  let timerCount = 10;
+  var cronometro = setInterval(() => {
+      timerDiv.innerHTML = `<p>${timerCount--}</p>`;
+    if (timerCount <= 0) {
+      clearInterval(cronometro)
+        timerDiv.innerHTML = `<p> Feliz Ano Novo!!!!🎊 🎉🎊 🎉🎊 🎉 </p>`;
+      }
+  }, 1000);
+};
