@@ -82,6 +82,7 @@ section {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  padding: 1rem;
 }
 
 .card-console {
