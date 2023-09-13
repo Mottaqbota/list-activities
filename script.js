@@ -28,3 +28,14 @@ function startTimer() {
       }
   }, 1000);
 };
+
+function enviar(){
+  let inputUser = document.getElementById('usuario-input');
+  let inputSenha = document.getElementById('senha-input');
+
+  if(inputUser.value === inputSenha.value) {
+    alert('Insira uma senha diferente do Usuário!')
+  } else {
+    alert('Senha Cadastrada com sucesso!')
+  }
+}
