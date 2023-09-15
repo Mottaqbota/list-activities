@@ -10,26 +10,19 @@
 </head>
 <body>
   <main>
-    <section>
       <div class="menu">
         <button onclick="Atividade1()"><i class="fa-solid fa-book"></i>Atividade 1</button>
-        <button onclick=""><i class="fa-solid fa-book"></i>Atividade 2</button>
-        <button onclick=""><i class="fa-solid fa-book"></i>Atividade 3</button>
-        <button onclick=""><i class="fa-solid fa-book"></i>Atividade 4</button>
-        <button class="clear-button" onclick=""><i class="fa-solid fa-trash"></i>Limpar Console</button>
+        <button onclick="Atividade2()"><i class="fa-solid fa-book"></i>Atividade 2</button>
+        <button onclick="Atividade3()"><i class="fa-solid fa-book"></i>Atividade 3</button>
+        <button onclick="Atividade4()"><i class="fa-solid fa-book"></i>Atividade 4</button>
+        <button class="clear-button" onclick="window.location.reload()"><i class="fa-solid fa-trash"></i>Limpar Console</button>
       </div>
-    </section>
-    <section>
-      <div class="card-console">
-        <h1>Console:</h1>
-        
+
+      <section>
         <div class="card-activities" id="atividade1">
-          <p>Informe uma Matéria:</p>
-          <input class="input-grade" type="text" placeholder="Insira a Matéria">
-          <p>Informe uma nota entre zero e dez:</p>
-          <input class="input-note" type="text" placeholder="Insira a nota">
-          <button onclick="getNoteValue()">Enviar</button>
-          <div id="card-newNotes"></div>
+          <h1>Informe um valor entre zero e dez:</h1>
+          <input id="valor-input" type="text" placeholder="Insira o valor">
+          <button onclick="getValue()">Enviar</button>
         </div>  
         
         <div class="card-activities" id="atividade2">
@@ -38,15 +31,23 @@
           <button onclick="startTimer()">Inciar Contagem Regressiva</button>
         </div>
 
-        <div class="card-activities">
-          <input type="text" id="usuario-input">
-          <input type="text" id="senha-input">
-          <button onclick="enviar()">Enviar</button>
+        <div class="card-activities" id="atividade3">
+          <h1>Faça login com um Usuário e Senha:</h1>
+          <input type="text" id="usuario-input" placeholder="Insira o Usuário">
+          <input type="text" id="senha-input" placeholder="Insira a Senha">
+          <button onclick="enviar()">Entrar</button>
+          <div id="resultLogin"></div>
         </div>
-        
-        <div id="consoleContents"></div>
-      </div>
+
+        <div class="card-activities" id="atividade4">
+          <h1>Calcular 2 Valores:</h1>
+          <input type="text" id="valor1-input" placeholder="Insira o primeiro Valor">
+          <input type="text" id="valor2-input" placeholder="Insira o segundo Valor">
+          <button onclick="CalcularValores()">Calcular</button>
+          <div id="resultCalc"></div>
+        </div>
     </section>
+
   </main>
   <script src="script.js"></script>
 </body>
